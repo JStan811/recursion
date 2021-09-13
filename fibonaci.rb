@@ -21,15 +21,11 @@ p fibs(2)
 p fibs(7)
 
 def fibs_rec(num)
-  if num == 1
-    result_array = [0]
-  elsif num == 2
-    result_array = [0, 1]
-  else
-    result_array = fibs_rec(num - 1)
-    result_array.push(result_array[num - 2] + result_array[num - 3])
-  end
-  result_array
+  return [0] if num == 1
+  return [0, 1] if num == 2
+
+  result_array = fibs_rec(num - 1)
+  result_array.push(result_array[num - 2] + result_array[num - 3])
 end
 
 p fibs_rec(1)
